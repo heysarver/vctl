@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-prod-nginx
+spec:
+  acme:
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: asarver@sarverenterprises.com
+    privateKeySecretRef:
+      name: letsencrypt-prod-nginx
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
