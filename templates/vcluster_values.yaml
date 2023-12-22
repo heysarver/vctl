@@ -19,8 +19,8 @@ ingress:
   pathType: ImplementationSpecific
   apiVersion: networking.k8s.io/v1
   host: vc-${VC_CLUSTER_NAME}.${VC_DOMAIN}
+  ingressClassName: nginx
   annotations:
-    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
